@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block contenido %}
+
+<h1 class="titulo_index">
+    Bienvenido a IndexZero
+</h1>
+
+<h3 class="subtitulo_index">
+    Tutoriales, ejemplos y guias
+</h3>
+
+<h3 class="subtitulo_index">
+    Entra y sumerjete en este mar de conocimiento
+</h3>
+
+<p class="p_index"> Lenguajes mas populares </p>
+
+<ul class="lista_lenguajes">
+   {% for lenguaje in lenguajes %}
+    <li class="lenguaje_item"> -- "{{ lenguaje.nombre }}"</li>
+   {% endfor %}
+</ul>
+
+{% endblock %}

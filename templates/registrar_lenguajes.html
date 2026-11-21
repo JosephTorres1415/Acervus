@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+
+{% block title %} Registrar {% endblock %}
+
+
+{% block contenido %}
+
+<h1 class="titulo_lenguajes"> Registra un nuevo lenguaje </h1>
+
+<h3 class="h3 lenguajes"> Ingresa los datos del
+     lenguaje para registrarlo en el sistema
+     y asi puedas luego ingresar sus respectivas clases
+</h3>
+
+
+
+  <form class="form" method="POST">
+
+    <p class = "form_input">
+
+      <label for="nombre">Nombre del lenguaje:</label>
+      <input type="text" name="nombre" id="nombre" class="nombre" required>
+    </p>
+
+
+    <p class = "form_input">
+
+      <label for="descripcion">Descripcion:</label>
+      <input type="text" name="descripcion" id="descripcion" class="descripcion" required>
+
+    </p>
+
+
+
+    <button type="submit" class="form_submit">Agregar</button>
+
+  </form>
+
+
+<h2 class="h2 lenguajes"> Lista de lenguajes </h2>
+  <ul class = "list-group">
+      {% for lenguaje in lenguajes %}
+      <li class = "list-group-item">
+          <a href="{{ url_for('crear_clases', nombre=lenguaje.nombre) }}" class="navegacion_link">{% print lenguaje %}</a>
+      </li>
+      {%endfor%}
+
+  </ul>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block title %} Registrar {% endblock %}
+
+
+{% block contenido %}
+
+<h1 class="titulo_lecciones"> Agregar nueva clase </h1>
+
+
+
+  <form class="form" method="POST">
+
+    <p class = "form_input">
+
+      <label for="Titulo">Titulo de la clase:</label>
+      <input type="text" name="Titulo" id="Titulo" class="Titulo" required>
+    </p>
+
+
+    <p class = "form_input">
+
+      <label for="Contenido">Contenido:</label>
+      <input type="text" name="Contenido" id="Contenido" class="Contenido" required>
+
+    </p>
+
+    <p class = "form_input">
+
+      <label for="Codigo">Codigo de ejemplo:</label>
+      <input type="text" name="Codigo" id="Codigo" class="Codigo" required>
+
+    </p>
+
+
+
+    <button type="submit" class="form_submit">Agregar</button>
+
+  </form>
+
+
+
+
+
+
+{% endblock %}

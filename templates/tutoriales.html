@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block title %} Home {% endblock %}
+
+
+{% block contenido %}
+
+<h1 class="titulo_tutoriales">
+    Selecciona el que mas te guste y aprende
+</h1>
+
+<h3 class="h3_tutoriales">
+    solo presiona encima del lenguaje que deseas aprender y podras ver sus clases
+</h3>
+
+
+
+<p class="p_tutoriales"> lista de lenguajes disponibles para aprender </p>
+
+
+<div class="grid-lenguajes">
+  {% for lenguaje in lenguajes %}
+
+  <a href="{{ url_for('ver_clases', nombre=lenguaje.nombre) }}" class="card-lenguaje">
+    <img src="{{ url_for('static', filename='img/' + lenguaje.nombre | lower + '.png') }}" alt="{{lenguaje.nombre}}" class="logo-lenguaje">
+    <span class="nombre-lenguaje">{{lenguaje.nombre}}</span>
+
+  </a>
+
+
+
+  {%endfor%}
+
+
+</div>
+
+
+{% endblock %}

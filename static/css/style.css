@@ -1,0 +1,384 @@
+/* --- 1. RESET Y ESTILOS GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1e222b;
+    color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- 2. BARRA DE NAVEGACIÓN (HEADER) --- */
+.navegar {
+    background-color: #14171f;
+    padding: 16px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navegacion {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.navegacion_item a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.navegacion_item a:hover {
+    color: #38bdf8;
+}
+
+/* --- 3. CONTENEDOR PRINCIPAL (Márgenes limpios y centrado) --- */
+main, .container {
+    flex: 1;
+    max-width: 750px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 0 10px;
+}
+
+/* --- 4. ESTILOS ESPECÍFICOS DEL INDEX --- */
+.titulo_index {
+    font-size: 46px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.subtitulo_index {
+    font-size: 17px;
+    font-weight: 400;
+    color: #e2e8f0;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitulo_index:nth-of-type(2) {
+    color: #fbbf24;
+    font-weight: 500;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.p_index {
+    font-size: 15px;
+    color: #94a3b8;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.lista_lenguajes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 450px;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 0;
+}
+
+.lenguaje_item {
+    background: #272c38;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: #f1f5f9;
+    font-weight: 500;
+    border: 1px solid #333947;
+    text-align: center;
+}
+
+/* --- 5. TÍTULOS GENERALES Y PÁRRAFOS (Tutoriales y Registrar) --- */
+.titulo_lecciones, .titulo_lenguajes, .titulo_tutoriales {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.h3.lenguajes, .h3_tutoriales {
+    font-size: 15px;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Párrafos descriptivos en tutoriales o listas (ej: "lista de lenguajes disponibles...") */
+.p_tutoriales {
+    font-size: 14px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* --- 7. FORMULARIOS Y LISTAS (REGISTRAR LENGUAJE) --- */
+.form {
+    background: #272c38;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333947;
+    margin-top: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form_input {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_input label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.form_input input,
+.form_input textarea {
+    padding: 12px 14px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background-color: #1a1e26;
+    color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form_input input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.form_submit, .btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+    font-size: 15px;
+}
+
+.form_submit:hover, .btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Título de la lista en registrar_lenguajes.html ("Lista de lenguajes") */
+.h2.lenguajes {
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.list-group {
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-group-item {
+    background: #272c38;
+    margin-bottom: 8px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid #333947;
+    text-align: center;
+}
+
+.list-group-item a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+/* --- 8. VISTA DE CLASES (VER_CLASES.HTML) --- */
+.lista-tutoriales {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-tutorial {
+    background: #272c38 !important;
+    border: 1px solid #333947 !important;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.card-tutorial h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #333947;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.card-tutorial ul li {
+    background: #1a1e26 !important;
+    border: 1px solid #333947 !important;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 8px;
+    color: #cbd5e1;
+}
+
+pre {
+    background: #0f172a !important;
+    color: #38bdf8 !important;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin-top: 8px;
+    border: 1px solid #333947;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #333947;
+    margin: 25px 0;
+}
+
+/* --- 9. PIE DE PÁGINA (FOOTER) --- */
+.footer {
+    background-color: #14171f;
+    color: #94a3b8;
+    padding: 40px 20px;
+    margin-top: auto;
+    border-top: 1px solid #272c38;
+}
+
+.footer_contet {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 400px;
+}
+
+.right {
+    display: flex;
+    gap: 40px;
+}
+
+.footer_column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer_item {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer_item:hover {
+    color: #ffffff;
+}
+
+
+/* --- CUADRÍCULA Y TARJETAS DE LENGUAJES CENTRADAS --- */
+/* --- CONTENEDOR ESPECÍFICO PARA TUTORIALES --- */
+/* Si usas una clase extra o quieres aplicarlo al contenedor de tutoriales */
+.grid-lenguajes {
+    display: grid;
+    /* Creamos columnas automáticas que se centran solas */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 160px));
+    gap: 25px;
+    margin-top: 30px;
+    /* Esto es la clave para centrar toda la cuadrícula en la pantalla */
+    justify-content: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-lenguaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra horizontalmente el logo y el texto dentro de la tarjeta */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;      /* Asegura que cualquier texto dentro esté centrado */
+    background-color: #272c38;
+    border: 1px solid #333947;
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
+}
+
+.card-lenguaje:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+    background-color: #2d3342;
+}
+
+.logo-lenguaje {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;   /* Centra la imagen de forma absoluta */
+    margin-right: auto;
+}
+
+.nombre-lenguaje {
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;  /* Centra el nombre del lenguaje */
+    width: 100%;
+}

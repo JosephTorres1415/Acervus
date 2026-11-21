@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}  {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+
+
+
+
+<body>
+
+  <header class="navegar">
+
+    <ul class="navegacion">
+
+      <li class="navegacion_item"><a href="{{ url_for('mostrar_tutoriales') }}">TUTORIALES</a> </li>
+      <li class="navegacion_item"><a href="{{ url_for('registrar_lenguajes') }}">Crear clase</a> </li>
+    </ul>
+
+
+  </header>
+
+  {% block contenido %}
+
+
+
+
+  {% endblock %}
+
+
+  <footer class="footer">
+
+         <div class="footer_contet">
+             <section class="left">
+
+                 <a class="footer_item">Creada por Josph</a>
+                 <a class="footer_item">Web IndexZero diseñada para que cualquiera pueda aprender lo que desee</a>
+
+             </section>
+
+             <section class="right">
+
+
+                 <div class="footer_column">
+
+                     <a class="footer_item">Acerca de</a>
+                     <a class="footer_item">Como fue hecha esto</a>
+
+                 </div>
+
+             </section>
+
+
+
+         </div>
+
+
+  </footer>
+
+
+</body>
+
+</html>
