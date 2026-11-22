@@ -85,24 +85,55 @@ main, .container {
     text-align: center;
 }
 
+/* Contenedor en 2 columnas de 5 filas */
 .lista_lenguajes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 450px;
-    margin: 0 auto;
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 25px auto;
+    max-width: 520px; /* Ancho ideal para 2 columnas centradas */
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    grid-template-rows: repeat(5, auto);    /* 5 filas por columna */
+    grid-auto-flow: column;                 /* Llena primero la col 1 (5) y luego la col 2 (5) */
+    gap: 14px 20px;                         /* Espacio vertical y horizontal */
 }
 
-.lenguaje_item {
-    background: #272c38;
-    padding: 12px 18px;
-    border-radius: 8px;
+/* Diseño de cada tarjeta */
+.lenguaje_item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #282c37;
     color: #f1f5f9;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: 1px solid #383e4e;
     font-weight: 500;
-    border: 1px solid #333947;
-    text-align: center;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+}
+
+/* Pequeño indicador amarillo haciendo juego con tu subtítulo */
+.lenguaje_item .punto {
+    width: 8px;
+    height: 8px;
+    background-color: #f59e0b; /* Mismo tono dorado de tu texto */
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.lenguaje_item a:hover {
+    background-color: #323746;
+    border-color: #f59e0b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.lenguaje_item a:hover .punto {
+    transform: scale(1.4);
 }
 
 /* --- 5. TÍTULOS GENERALES Y PÁRRAFOS (Tutoriales y Registrar) --- */
@@ -382,3 +413,4 @@ hr {
     text-align: center;  /* Centra el nombre del lenguaje */
     width: 100%;
 }
+
