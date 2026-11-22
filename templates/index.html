@@ -20,8 +20,13 @@
 
 <ul class="lista_lenguajes">
    {% for lenguaje in lenguajes %}
-    <li class="lenguaje_item"> -- "{{ lenguaje.nombre }}"</li>
+    <li class="lenguaje_item">
+        <a href="{{ url_for('ver_clases', nombre=lenguaje.nombre) }}">
+           <span class="punto"></span>
+           {{ lenguaje.nombre | capitalize }}
+        </a>
+    </li>
    {% endfor %}
 </ul>
 
-{% endblock %}
+{% 
