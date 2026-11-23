@@ -26,7 +26,8 @@ if coleccion_usuarios.find_one({"rol": "admin"}) is None:
 
 def index():
     lista_lenguajes = leer_todos_los_lenguajes()
-    return render_template('index.html', lenguajes=lista_lenguajes[:10])
+    profesiones = ["Ingeniero de software","Desarrollador Front End", "Desarrollador Backend","Desarrollador Full Stack","Analista de datos","DevOps","Redes informaticas"]
+    return render_template('index.html', lenguajes=lista_lenguajes[:10],profesiones=profesiones)
 
 
 
@@ -56,7 +57,7 @@ def registrar_lenguajes():
 
         coleccion.insert_one(diccionario_mongo)
 
-        #plataforma.registar_lenguaje(nuevo_lenguaje)
+
 
         return redirect(url_for('registrar_lenguajes'))
     elif request.method == 'GET':
@@ -140,15 +141,45 @@ def ver_clases(nombre):
 
     lista_lenguajes = leer_todos_los_lenguajes()
     lenguaje_actual = None
+
     for l in lista_lenguajes:
         if l.nombre == nombre:
             lenguaje_actual = l
             break
 
-    return render_template('ver_clases.html', lenguaje=lenguaje_actual)
+    tutorial_seleccionado = None
+    tutorial_anterior = None
+    tutorial_siguiente = None
+
+    if lenguaje_actual and lenguaje_actual.tutoriales:
+        titulo_elegido = request.args.get('tema')
+        indice_actual = 0
+
+        if titulo_elegido:
+            for i,t in enumerate(lenguaje_actual.tutoriales):
+                if t.titulo == titulo_elegido:
+                    indice_actual = i
+                    break
+
+        tutorial_seleccionado = lenguaje_actual.tutoriales[indice_actual]
+
+        if indice_actual > 0 :
+            tutorial_anterior = lenguaje_actual.tutoriales[indice_actual - 1]
+
+        if indice_actual < len(lenguaje_actual.tutoriales) - 1:
+            tutorial_siguiente = lenguaje_actual.tutoriales[indice_actual + 1]
 
 
+    return render_template('ver_clases.html', lenguaje=lenguaje_actual,tutorial_actual = tutorial_seleccionado, tutorial_anterior = tutorial_anterior, tutorial_siguiente = tutorial_siguiente)
 
+
+@app.route('/legajo')
+def mostrar_legajo():
+    return render_template('legajo.html')
+
+@app.route('/hoja_rutas')
+def mostrar_hoja_rutas():
+    return render_template('hoja_rutas.html')
 
 #------------ LOGIN -------------#
 
@@ -216,6 +247,7 @@ def logout():
 
 if __name__ == "__main__":
     app.run()
+
 
 
 
