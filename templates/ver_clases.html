@@ -4,47 +4,114 @@
 
 {% block contenido %}
 
-<div class="container" style="padding: 20px;">
-    <h1>Tutoriales y Clases de: {{ lenguaje.nombre }}</h1>
-    <p><strong>Descripción:</strong> {{ lenguaje.descripcion }}</p>
+<div class="layout-w3">
 
-    <hr>
+    <!-- 1. BARRA LATERAL IZQUIERDA (Lista de clases) -->
+    <aside class="sidebar-clases">
+        <div class="sidebar-header">
+            <h2>Tutorial de {{ lenguaje.nombre | capitalize }}</h2>
+        </div>
 
-    <h2>Contenido disponible:</h2>
+        {% if lenguaje.tutoriales %}
+            <ul class="lista-menu-clases">
+                {% for tutorial in lenguaje.tutoriales %}
+                    <li>
+                        <a href="{{ url_for('ver_clases', nombre=lenguaje.nombre, tema=tutorial.titulo) }}"
+                           class="item-menu-clase {% if tutorial_actual and tutorial.titulo == tutorial_actual.titulo %}activo{% endif %}">
+                            {{ tutorial.titulo }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="sin-clases">Aún no hay clases.</p>
+        {% endif %}
 
-    <!-- Verificamos si el lenguaje tiene tutoriales guardados -->
-    {% if lenguaje.tutoriales %}
-        <div class="lista-tutoriales">
-            {% for tutorial in lenguaje.tutoriales %}
-                <div class="card-tutorial" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+        <div class="sidebar-footer">
+            <a href="{{ url_for('mostrar_tutoriales') }}" class="btn-volver">← Todos los lenguajes</a>
+        </div>
+    </aside>
 
-                    <!-- Mostramos el título del tutorial -->
-                    <h3>{{ tutorial.titulo }}</h3>
+    <!-- 2. ÁREA CENTRAL (Solo el contenido de la clase seleccionada) -->
 
-                    <!-- Recorremos las lecciones que pertenecen a este tutorial -->
-                    {% if tutorial.lecciones %}
-                        <ul style="list-style-type: none; padding-left: 0;">
-                            {% for leccion in tutorial.lecciones %}
-                                <li style="background: #f9f9f9; padding: 10px; margin-top: 8px; border-radius: 4px;">
-                                    <p><strong>Contenido:</strong> {{ leccion.contenido }}</p>
-                                    <p><strong>Código de ejemplo:</strong></p>
-                                    <pre style="background: #272822; color: #f8f8f2; padding: 10px; border-radius: 4px;"><code>{{ leccion.codigo_ejemplo }}</code></pre>
-                                </li>
-                            {% endfor %}
-                        </ul>
+    <main class="contenido-clase">
+
+
+            <div class="clase-contenedor">
+
+                <button id="btn-toggle-menu" class="btn-menu-toggle">
+                   ☰ Ocultar menú
+                </button>
+
+                {% if tutorial_actual %}
+                <span class="etiqueta-lenguaje">{{ lenguaje.nombre | upper }}</span>
+                <h1 class="titulo-clase-principal">{{ tutorial_actual.titulo }}</h1>
+                <hr class="divisor">
+
+                {% if tutorial_actual.lecciones %}
+                    {% for leccion in tutorial_actual.lecciones %}
+                        <div class="bloque-leccion">
+                            <p class="texto-contenido">{{ leccion.contenido }}</p>
+
+                            {% if leccion.codigo_ejemplo %}
+                                <div class="caja-codigo">
+                                    <div class="caja-codigo-header">Ejemplo de código</div>
+                                    <pre><code>{{ leccion.codigo_ejemplo }}</code></pre>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Esta clase aún no tiene lecciones cargadas.</p>
+                {% endif %}
+
+                <div class="navegacion-clases">
+                    {% if tutorial_anterior %}
+                        <a href="{{ url_for('ver_clases', nombre=lenguaje.nombre, tema=tutorial_anterior.titulo) }}" class="btn-nav-clase">
+                            ← Clase anterior
+                        </a>
                     {% else %}
-                        <p>Este tutorial aún no tiene lecciones agregadas.</p>
+                        <span></span> <!-- Espacio vacío para mantener el botón derecho en su lugar -->
                     {% endif %}
 
+                    {% if tutorial_siguiente %}
+                        <a href="{{ url_for('ver_clases', nombre=lenguaje.nombre, tema=tutorial_siguiente.titulo) }}" class="btn-nav-clase btn-siguiente">
+                            Siguiente clase →
+                        </a>
+                    {% endif %}
                 </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <p>Aún no hay tutoriales registrados para este lenguaje.</p>
-    {% endif %}
 
-    <br>
-    <a href="{{ url_for('mostrar_tutoriales') }}" class="btn">Volver a Tutoriales</a>
+            </div>
+        {% else %}
+            <div class="clase-contenedor">
+                <h2>Aún no hay tutoriales registrados para {{ lenguaje.nombre }}.</h2>
+            </div>
+        {% endif %}
+    </main>
+
 </div>
 
+
+<script>
+    const botonMenu = document.getElementById("btn-toggle-menu");
+    const barraLateral = document.querySelector(".sidebar-clases");
+
+    botonMenu.addEventListener("click", function() {
+        // Agrega o quita la clase 'oculta' cada vez que haces clic
+        barraLateral.classList.toggle("oculta");
+
+        // Cambia el texto del botón según el estado
+        if (barraLateral.classList.contains("oculta")) {
+            botonMenu.textContent = "☰ Mostrar menú";
+        } else {
+            botonMenu.textContent = "☰ Ocultar menú";
+        }
+    });
+</script>
+
+
 {% endblock %}
+
+
+
+
