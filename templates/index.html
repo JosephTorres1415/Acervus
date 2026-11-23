@@ -5,7 +5,7 @@
 {% block contenido %}
 
 <h1 class="titulo_index">
-    Bienvenido a IndexZero
+    Bienvenido a Acervus
 </h1>
 
 <h3 class="subtitulo_index">
@@ -29,4 +29,59 @@
    {% endfor %}
 </ul>
 
+
+<section class="banner-oficios">
+    <div class="banner-oficios-contenido">
+        <span class="etiqueta-destacada">🧭 HOJAS DE RUTA GUIADAS</span>
+
+        <h1 class="banner-oficios-titulo">
+            Aprende un <span>oficio</span>, no solo un lenguaje
+        </h1>
+
+        <p class="banner-oficios-texto">
+            Hojas de ruta gratuitas que ordenan los cursos como lo haría un mentor.
+            Elige una meta profesional y empieza por el primer paso.
+        </p>
+
+        <ul class="lista_profesiones">
+           {% for profesion in profesiones %}
+            <li class="profesion_item">
+                <span class="punto"></span>
+                <span>{{ profesion }}</span>
+            </li>
+           {% endfor %}
+        </ul>
+    </div>
+</section>
+
+
+<section class="banner-legajo">
+    <div class="banner-legajo-contenido">
+        <span class="etiqueta-destacada">✨ RECURSO EXCLUSIVO</span>
+        <h2 class="banner-legajo-titulo">
+            ¿No sabes dónde seguir estudiando? Descubre nuestro <span>Legajo</span>
+        </h2>
+        <p class="banner-legajo-texto">
+            Sabemos que internet está lleno de cursos dispersos y desordenados. Por eso creamos el <strong>Legajo de Acervus</strong>: una biblioteca curada con todas las plataformas de la web, filtradas por nivel (<em>Básico, Intermedio y Avanzado</em>) y clasificadas en opciones <strong>gratuitas y de pago</strong> para que vayas directo a aprender sin perder tiempo buscando.
+        </p>
+
+        <div class="banner-legajo-beneficios">
+            <div class="beneficio-item">🎯 Filtrado por niveles</div>
+            <div class="beneficio-item">🆓 Opciones 100% gratuitas y de pago</div>
+            <div class="beneficio-item">🚀 Enlaces directos verificados</div>
+        </div>
+
+        <a href="{{ url_for('mostrar_legajo') }}" class="btn-explorar-legajo">
+            📁 Explorar el Legajo ahora →
+        </a>
+    </div>
+</section>
+
+
+
+
+
 {% endblock %}
+
+
+
