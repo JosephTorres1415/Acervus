@@ -16,19 +16,25 @@
 
     <ul class="navegacion">
 
+        <li class="navegacion_item">
+            <button id="btn-menu-principal" class="btn-menu-nav">☰ Menú</button>
+        </li>
+
         <li class="navegacion_item"><a href="{{ url_for('index') }}">INICIO</a></li>
-        <li class="navegacion_item"><a href="{{ url_for('mostrar_tutoriales') }}">TUTORIALES</a></li>
 
         {% if session.get('rol') == 'admin' %}
         <li class="navegacion_item"><a href="{{ url_for('registrar_lenguajes') }}">Crear clase</a></li>
         {% endif %}
 
+
+
+
         {% if session.get('usuario_nombre') %}
-        <li class="navegacion_item"><span>Hola, {{ session['usuario_nombre'] }}</span></li>
+        <li class="navegacion_item derecha"><span>Hola, {{ session['usuario_nombre'] }}</span></li>
         <li class="navegacion_item"><a href="{{ url_for('logout') }}">Cerrar sesión</a></li>
         {% else %}
 
-        <li class="navegacion_item"><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+        <li class="navegacion_item derecha"><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
         <li class="navegacion_item"><a href="{{ url_for('registro') }}">Registrarse</a></li>
         {% endif %}
 
@@ -36,6 +42,19 @@
 
 
   </header>
+
+  <aside id="menu-lateral-principal" class="sidebar-principal oculto">
+          <div class="sidebar-principal-header">
+              <span>Explorar plataforma</span>
+              <button id="btn-cerrar-principal" class="btn-cerrar-x">✕</button>
+          </div>
+          <ul class="lista-sidebar-principal">
+              <li><a href="{{ url_for('mostrar_hoja_rutas') }}" class="item-sidebar-principal">🗺️ Hojas de rutas</a></li>
+              <li><a href="{{ url_for('mostrar_legajo') }}" class="item-sidebar-principal">📁 Legajo</a></li>
+              <li><a href="{{ url_for('mostrar_tutoriales') }}" class="item-sidebar-principal">📚 Tutoriales</a></li>
+          </ul>
+  </aside>
+
 
   {% block contenido %}
 
@@ -75,6 +94,23 @@
   </footer>
 
 
+<script>
+    const btnAbrirMenu = document.getElementById("btn-menu-principal");
+    const btnCerrarMenu = document.getElementById("btn-cerrar-principal");
+    const panelLateral = document.getElementById("menu-lateral-principal");
+
+    btnAbrirMenu.addEventListener("click", function() {
+        panelLateral.classList.toggle("oculto");
+    });
+
+    btnCerrarMenu.addEventListener("click", function() {
+        panelLateral.classList.add("oculto");
+    });
+</script>
+
+
+
 </body>
 
 </html>
+
