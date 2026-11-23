@@ -26,7 +26,7 @@ if coleccion_usuarios.find_one({"rol": "admin"}) is None:
 
 def index():
     lista_lenguajes = leer_todos_los_lenguajes()
-    profesiones = ["Ingeniero de software","Desarrollador Front End", "Desarrollador Backend","Desarrollador Full Stack","Analista de datos","DevOps","Redes informaticas"]
+    profesiones = ["Desarrollador Web con Python"]
     return render_template('index.html', lenguajes=lista_lenguajes[:10],profesiones=profesiones)
 
 
