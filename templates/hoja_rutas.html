@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block title %} Hoja de Rutas - Acervus {% endblock %}
+
+{% block contenido %}
+<div class="contenedor-ruta">
+    <div style="text-align: center;">
+        <span class="etiqueta-destacada">🧭 RUTA GUIADA • PYTHON + HTML</span>
+    </div>
+    <h1 class="titulo_index">Hoja de Ruta: Desarrollo Web con Python</h1>
+    <p class="subtitulo_index_h2">
+        Aprende a construir aplicaciones web reales desde cero uniendo la estructura de <strong>HTML</strong> con el poder del backend en <strong>Python</strong>. Sigue cada fase en orden usando los recursos de nuestro Legajo.
+    </p>
+
+    <!-- LÍNEA DE TIEMPO VERTICAL -->
+    <div class="timeline-ruta">
+
+        <!-- FASE 1 -->
+        <div class="paso-ruta">
+            <div class="paso-numero">1</div>
+            <div class="paso-tarjeta">
+                <div class="paso-header">
+                    <span class="badge-fase">FASE 1 • FUNDAMENTOS</span>
+                    <h3>Bases de la Estructura Web y Lógica de Programación</h3>
+                </div>
+                <p class="paso-descripcion">
+                    Antes de conectar ambos mundos, domina cómo se construye el esqueleto de una página web y cómo pensar como programador con variables, condicionales y bucles.
+                </p>
+
+                <div class="paso-columnas">
+                    <div class="mini-bloque">
+                        <strong>🌐 Qué aprender de HTML:</strong>
+                        <ul>
+                            <li>Etiquetas de texto, enlaces, imágenes y listas.</li>
+                            <li>Estructura básica (<code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>).</li>
+                        </ul>
+                    </div>
+                    <div class="mini-bloque">
+                        <strong>🐍 Qué aprender de Python:</strong>
+                        <ul>
+                            <li>Tipos de datos, variables y operadores.</li>
+                            <li>Condicionales (<code>if/else</code>) y ciclos (<code>for/while</code>).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="paso-recursos">
+                    <span>📚 <strong>Dónde estudiarlo (Legajo Básico):</strong> W3Schools, Cisco Networking Academy, Coddy.tech o freeCodeCamp.</span>
+                </div>
+                <div class="paso-meta">
+                    🎯 <strong>Meta práctica:</strong> Crear una página personal estática en HTML y un programa de consola en Python (ej. calculadora o menú interactivo).
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="paso-ruta">
+            <div class="paso-numero">2</div>
+            <div class="paso-tarjeta">
+                <div class="paso-header">
+                    <span class="badge-fase">FASE 2 • INTERMEDIO</span>
+                    <h3>Formularios Web y Programación Orientada a Objetos (POO)</h3>
+                </div>
+                <p class="paso-descripcion">
+                    Aprende a capturar datos del usuario en el navegador mediante formularios y a modelar esa información usando clases y objetos en Python.
+                </p>
+
+                <div class="paso-columnas">
+                    <div class="mini-bloque">
+                        <strong>🌐 Qué aprender de HTML:</strong>
+                        <ul>
+                            <li>Formularios (<code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>).</li>
+                            <li>Tablas y HTML semántico (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>).</li>
+                        </ul>
+                    </div>
+                    <div class="mini-bloque">
+                        <strong>🐍 Qué aprender de Python:</strong>
+                        <ul>
+                            <li>Listas, diccionarios y manejo de errores.</li>
+                            <li>Clases, objetos, atributos y métodos (POO).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="paso-recursos">
+                    <span>📚 <strong>Dónde estudiarlo (Legajo Intermedio):</strong> MDN Web Docs, El Libro de Python, Platzi o Cisco Python Essentials 2.</span>
+                </div>
+                <div class="paso-meta">
+                    🎯 <strong>Meta práctica:</strong> Diseñar un formulario de registro en HTML y crear las clases en Python que representen esos usuarios y cursos.
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="paso-ruta">
+            <div class="paso-numero">3</div>
+            <div class="paso-tarjeta">
+                <div class="paso-header">
+                    <span class="badge-fase">FASE 3 • UNIÓN FULL-STACK</span>
+                    <h3>Conectar HTML y Python con Flask y Plantillas Jinja2</h3>
+                </div>
+                <p class="paso-descripcion">
+                    Aquí es donde ambos lenguajes trabajan juntos: Python procesa la lógica en el servidor y envía datos dinámicos hacia tus plantillas HTML.
+                </p>
+
+                <div class="paso-columnas">
+                    <div class="mini-bloque">
+                        <strong>🌐 Qué aprender en Plantillas:</strong>
+                        <ul>
+                            <li>Herencia con <code>base.html</code> y bloques dinámicos.</li>
+                            <li>Mostrar variables y bucles dentro del HTML con Jinja2.</li>
+                        </ul>
+                    </div>
+                    <div class="mini-bloque">
+                        <strong>🐍 Qué aprender en el Servidor:</strong>
+                        <ul>
+                            <li>Rutas HTTP (<code>GET</code> y <code>POST</code>) con Flask.</li>
+                            <li>Recibir datos de formularios (<code>request.form</code>) y sesiones.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="paso-recursos">
+                    <span>📚 <strong>Dónde estudiarlo (Legajo Avanzado):</strong> Documentación oficial de Flask, Platzi Escuela de Python o nuestras clases en Acervus.</span>
+                </div>
+                <div class="paso-meta">
+                    🎯 <strong>Meta práctica:</strong> Construir una aplicación web dinámica donde los formularios HTML guarden datos procesados por Python.
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 4 -->
+        <div class="paso-ruta">
+            <div class="paso-numero">4</div>
+            <div class="paso-tarjeta">
+                <div class="paso-header">
+                    <span class="badge-fase">FASE 4 • PRODUCCIÓN</span>
+                    <h3>Persistencia en Base de Datos, SEO y Despliegue</h3>
+                </div>
+                <p class="paso-descripcion">
+                    Lleva tu proyecto al mundo real guardando la información permanentemente en la nube y optimizando tu HTML para buscadores.
+                </p>
+
+                <div class="paso-columnas">
+                    <div class="mini-bloque">
+                        <strong>🌐 Qué aprender de HTML Avanzado:</strong>
+                        <ul>
+                            <li>Metadatos SEO y accesibilidad web (ARIA).</li>
+                            <li>Optimización de estructura y rendimiento.</li>
+                        </ul>
+                    </div>
+                    <div class="mini-bloque">
+                        <strong>🐍 Qué aprender de Backend Avanzado:</strong>
+                        <ul>
+                            <li>Conexión a bases de datos (MongoDB / SQL).</li>
+                            <li>Despliegue en la nube (Render / GitHub).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="paso-recursos">
+                    <span>📚 <strong>Dónde estudiarlo (Legajo Avanzado):</strong> Guía SEO de Google, MDN Accesibilidad y FastAPI/Flask Docs.</span>
+                </div>
+                <div class="paso-meta">
+                    🎯 <strong>Meta final:</strong> Publicar tu propia plataforma web funcional en internet (¡como Acervus!).
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BOTONES FINALES DE ACCIÓN -->
+    <div class="acciones-ruta">
+        <a href="{{ url_for('mostrar_legajo') }}" class="btn-explorar-legajo">
+            📁 Ir al Legajo de Recursos
+        </a>
+        <a href="{{ url_for('mostrar_tutoriales') }}" class="btn-secundario-ruta">
+            📚 Ver Tutoriales en Acervus →
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+
+
+

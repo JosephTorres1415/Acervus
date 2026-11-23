@@ -1,0 +1,528 @@
+{% extends "base.html" %}
+
+{% block title %} Legajo de Recursos - Acervus {% endblock %}
+
+{% block contenido %}
+<div class="contenedor-legajo">
+    <div style="text-align: center;">
+        <span class="etiqueta-destacada">🌎 ESPAÑOL E INGLÉS • ACERVUS</span>
+    </div>
+    <h1 class="titulo_index">Legajo de Recursos Externos</h1>
+    <p class="subtitulo_index_h2">
+        Directorio curado de las mejores plataformas de toda la web <strong>en español e inglés</strong>, organizado por nivel de dificultad para que avances sin límites.
+    </p>
+
+    <!-- Selector de lenguaje (Pestañas) -->
+    <div class="tabs-legajo">
+        <button class="tab-btn activo" onclick="mostrarLenguaje('python', this)">🐍 Python</button>
+        <button class="tab-btn" onclick="mostrarLenguaje('html', this)">🌐 HTML</button>
+    </div>
+
+    <!-- ================= SECCIÓN PYTHON ================= -->
+    <div id="seccion-python" class="contenido-lenguaje-legajo">
+        <div class="grid-niveles">
+
+            <!-- NIVEL BÁSICO PYTHON (5 Gratis / 3 De Pago) -->
+            <div class="columna-nivel">
+                <div class="nivel-header nivel-basico">
+                    <h2>🟢 Nivel Básico</h2>
+                    <span>Fundamentos, sintaxis y lógica</span>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">Gratuitos (5)</h4>
+
+                    <a href="https://www.w3schools.com/python/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>W3Schools Python (EN)</strong>
+                            <p>Tutorial interactivo desde cero con editor en vivo.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://coddy.tech/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Coddy.tech (EN)</strong>
+                            <p>Aprende sintaxis básica practicando retos diarios guiados.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.netacad.com/courses/python-essentials-1" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Cisco Networking Academy (ES/EN)</strong>
+                            <p>Curso oficial Python Essentials 1 con fundamentos sólidos.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.freecodecamp.org/espanol/news/aprende-python-desde-cero-curso-basico/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>freeCodeCamp en Español (ES)</strong>
+                            <p>Curso completo desde cero con ejercicios prácticos.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.mclibre.org/consultar/python/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Apuntes Python mclibre (ES)</strong>
+                            <p>Guía universitaria paso a paso con ejercicios resueltos.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">De pago (3)</h4>
+
+                    <a href="https://www.udemy.com/topic/python/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Udemy - Python desde cero (ES/EN)</strong>
+                            <p>Cursos completos en video con proyectos y certificado.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.codecademy.com/learn/learn-python-3" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Codecademy - Learn Python 3 (EN)</strong>
+                            <p>Prácticas interactivas en navegador con retroalimentación.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.datacamp.com/courses/intro-to-python-for-data-science" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>DataCamp - Intro to Python (EN)</strong>
+                            <p>Fundamentos de Python aplicados desde el primer día.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- NIVEL INTERMEDIO PYTHON (5 Gratis / 3 De Pago) -->
+            <div class="columna-nivel">
+                <div class="nivel-header nivel-intermedio">
+                    <h2>🟡 Nivel Intermedio</h2>
+                    <span>POO, manejo de archivos y estructuras</span>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">Gratuitos (5)</h4>
+
+                    <a href="https://www.w3schools.com/python/python_classes.asp" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>W3Schools - POO y Módulos (EN)</strong>
+                            <p>Clases, herencia, iteradores y manejo de archivos.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.netacad.com/courses/python-essentials-2" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Cisco - Python Essentials 2 (ES/EN)</strong>
+                            <p>Programación orientada a objetos, paquetes y excepciones.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://coddy.tech/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Coddy.tech - Retos Intermedios (EN)</strong>
+                            <p>Resolución de algoritmos y estructuras de datos en Python.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://ellibrodepython.com/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>El Libro de Python (ES)</strong>
+                            <p>Explicaciones claras sobre clases, decoradores y generadores.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://docs.python.org/es/3/tutorial/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Documentación Oficial Python (ES/EN)</strong>
+                            <p>Referencia oficial sobre entornos virtuales y librería estándar.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">De pago (3)</h4>
+
+                    <a href="https://platzi.com/cursos/python-intermedio/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Platzi - Python Intermedio (ES)</strong>
+                            <p>Comprehensions, lambdas, manejo de errores y archivos.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.datacamp.com/courses/intermediate-python" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>DataCamp - Intermediate Python (EN)</strong>
+                            <p>Diccionarios avanzados, lógica de control y visualización.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.codecademy.com/learn/learn-intermediate-python-3" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Codecademy - Intermediate Python (EN)</strong>
+                            <p>Programación funcional, testing unitario y POO profunda.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- NIVEL AVANZADO PYTHON (5 Gratis / 3 De Pago) -->
+            <div class="columna-nivel">
+                <div class="nivel-header nivel-avanzado">
+                    <h2>🔴 Nivel Avanzado</h2>
+                    <span>Desarrollo Web, APIs y Ciencia de Datos</span>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">Gratuitos (5)</h4>
+
+                    <a href="https://www.w3schools.com/python/numpy/default.asp" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>W3Schools - NumPy, Pandas y ML (EN)</strong>
+                            <p>Guías prácticas de ciencia de datos y Machine Learning.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://flask.palletsprojects.com/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Documentación Oficial de Flask (EN)</strong>
+                            <p>Arquitectura web, blueprints y despliegue en producción.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.kaggle.com/learn" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Kaggle Learn (EN)</strong>
+                            <p>Micro-cursos intensivos de ciencia de datos e IA.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://aprendeconalf.es/docencia/python/manual/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Aprende con Alf - Data Science (ES)</strong>
+                            <p>Manual avanzado en español de Pandas y análisis estadístico.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://fastapi.tiangolo.com/es/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>FastAPI Documentación Oficial (ES/EN)</strong>
+                            <p>Creación de APIs modernas de alto rendimiento con Python.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">De pago (3)</h4>
+
+                    <a href="https://platzi.com/escuela/python/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Platzi - Escuela de Python (ES)</strong>
+                            <p>Rutas profesionales de Backend con Flask, Django y FastAPI.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.datacamp.com/tracks/python-programmer" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>DataCamp - Python Programmer Track (EN)</strong>
+                            <p>Ingeniería de software, optimización y paquetes en Python.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.udemy.com/topic/python/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Udemy - Master en Web y Data (ES/EN)</strong>
+                            <p>Especializaciones completas con proyectos reales avanzados.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= SECCIÓN HTML ================= -->
+    <div id="seccion-html" class="contenido-lenguaje-legajo" style="display: none;">
+        <div class="grid-niveles">
+
+            <!-- NIVEL BÁSICO HTML (5 Gratis / 3 De Pago) -->
+            <div class="columna-nivel">
+                <div class="nivel-header nivel-basico">
+                    <h2>🟢 Nivel Básico</h2>
+                    <span>Etiquetas, estructura y textos</span>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">Gratuitos (5)</h4>
+
+                    <a href="https://www.w3schools.com/html/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>W3Schools HTML (EN)</strong>
+                            <p>Etiquetas esenciales con editor interactivo "Try it Yourself".</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://coddy.tech/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Coddy.tech - HTML Básico (EN)</strong>
+                            <p>Ejercicios prácticos paso a paso para dominar etiquetas.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.netacad.com/courses/html-essentials" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Cisco - HTML Essentials (ES/EN)</strong>
+                            <p>Fundamentos de estructura web avalados por Cisco.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://lenguajehtml.com/html/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>LenguajeHTML.com (ES)</strong>
+                            <p>Guía visual moderna de todas las etiquetas HTML en español.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://htmlreference.io/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>HTML Reference (EN)</strong>
+                            <p>Referencia visual rápida de elementos y atributos básicos.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">De pago (3)</h4>
+
+                    <a href="https://www.codecademy.com/learn/learn-html" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Codecademy - Learn HTML (EN)</strong>
+                            <p>Curso interactivo desde cero con proyectos guiados.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://platzi.com/cursos/html-css/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Platzi - Curso Definitivo HTML y CSS (ES)</strong>
+                            <p>Bases sólidas de maquetación web en español.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.udemy.com/topic/html/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Udemy - HTML5 desde cero (ES/EN)</strong>
+                            <p>Cursos prácticos para construir tus primeras páginas web.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- NIVEL INTERMEDIO HTML (5 Gratis / 3 De Pago) -->
+            <div class="columna-nivel">
+                <div class="nivel-header nivel-intermedio">
+                    <h2>🟡 Nivel Intermedio</h2>
+                    <span>Formularios, tablas y HTML Semántico</span>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">Gratuitos (5)</h4>
+
+                    <a href="https://www.w3schools.com/html/html_forms.asp" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>W3Schools - Formularios y Semántica (EN)</strong>
+                            <p>Inputs, validaciones, tablas y etiquetas semánticas.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>MDN Web Docs (ES/EN)</strong>
+                            <p>La enciclopedia estándar del desarrollo web moderno.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://web.dev/learn/html" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Google web.dev - Learn HTML (EN)</strong>
+                            <p>Curso creado por Google sobre semántica y estructura.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.freecodecamp.org/espanol/news/aprende-html-y-css-curso-desde-cero/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>freeCodeCamp - Diseño Web (ES/EN)</strong>
+                            <p>Proyectos prácticos de formularios y maquetación.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.mclibre.org/consultar/htmlcss/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Apuntes HTML5 y CSS3 mclibre (ES)</strong>
+                            <p>Guía detallada sobre formularios, tablas y estándares W3C.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">De pago (3)</h4>
+
+                    <a href="https://platzi.com/cursos/html-practico/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Platzi - Curso Práctico de HTML (ES)</strong>
+                            <p>Maquetación profesional aplicando arquitectura semántica.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.udemy.com/topic/html/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Udemy - Desarrollo Web Completo (ES/EN)</strong>
+                            <p>Integración de formularios HTML5 con CSS3 y proyectos.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.codecademy.com/catalog/language/html-css" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Codecademy - Semantic HTML (EN)</strong>
+                            <p>Módulos especializados en estructura limpia y formularios.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- NIVEL AVANZADO HTML (5 Gratis / 3 De Pago) -->
+            <div class="columna-nivel">
+                <div class="nivel-header nivel-avanzado">
+                    <h2>🔴 Nivel Avanzado</h2>
+                    <span>Accesibilidad (ARIA), SEO y APIs HTML5</span>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">Gratuitos (5)</h4>
+
+                    <a href="https://www.w3schools.com/html/html5_canvas.asp" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>W3Schools - HTML APIs, Canvas y SVG (EN)</strong>
+                            <p>Geolocalización, Web Storage, Drag & Drop y gráficos.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://developer.mozilla.org/es/docs/Web/Accessibility" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>MDN Accesibilidad Web ARIA (ES/EN)</strong>
+                            <p>Estándares profesionales de accesibilidad web.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=es" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Guía SEO Técnico de Google (ES/EN)</strong>
+                            <p>Optimización de metadatos y estructura para buscadores.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://www.a11yproject.com/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>The A11Y Project (EN)</strong>
+                            <p>Checklist y buenas prácticas de accesibilidad avanzada.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+
+                    <a href="https://html.spec.whatwg.org/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>WHATWG HTML Living Standard (EN)</strong>
+                            <p>La especificación técnica oficial del lenguaje HTML.</p>
+                        </div>
+                        <span class="badge-gratis">Gratis</span>
+                    </a>
+                </div>
+
+                <div class="grupo-recursos">
+                    <h4 class="subtitulo-tipo">De pago (3)</h4>
+
+                    <a href="https://platzi.com/escuela/web/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Platzi - Escuela de Desarrollo Web (ES)</strong>
+                            <p>Rendimiento web, SEO técnico, accesibilidad y HTML5.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.udemy.com/topic/html/" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Udemy - HTML5 Avanzado y APIs (ES/EN)</strong>
+                            <p>Uso avanzado de Canvas, Web Workers y almacenamiento local.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+
+                    <a href="https://www.codecademy.com/learn/learn-accessible-web-design" target="_blank" class="card-recurso">
+                        <div class="recurso-info">
+                            <strong>Codecademy - Accessible Web Design (EN)</strong>
+                            <p>Diseño inclusivo profesional con estándares WCAG y ARIA.</p>
+                        </div>
+                        <span class="badge-pago">De pago</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function mostrarLenguaje(lenguaje, botonPresionado) {
+        document.getElementById("seccion-python").style.display = "none";
+        document.getElementById("seccion-html").style.display = "none";
+
+        document.getElementById("seccion-" + lenguaje).style.display = "block";
+
+        const botones = document.querySelectorAll(".tab-btn");
+        botones.forEach(btn => btn.classList.remove("activo"));
+        botonPresionado.classList.add("activo");
+    }
+</script>
+{% endblock %}
