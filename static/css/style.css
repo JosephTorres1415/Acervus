@@ -16,19 +16,110 @@ body {
 
 /* --- 2. BARRA DE NAVEGACIÓN (HEADER) --- */
 .navegar {
-    background-color: #14171f;
-    padding: 16px 40px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #181b22;
+    border-bottom: 1px solid #2e3340;
+    padding: 12px 30px;
 }
 
 .navegacion {
-    list-style: none;
     display: flex;
-    gap: 30px;
     align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    gap: 22px;
 }
+
+.navegacion_item.derecha {
+    margin-left: auto;
+}
+
+.btn-menu-nav {
+    background-color: #282c37;
+    color: #f8fafc;
+    border: 1px solid #383e4e;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-menu-nav:hover {
+    background-color: #323746;
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+/* --- PANEL LATERAL DESPLEGABLE (Estilo W3Schools) --- */
+.sidebar-principal {
+    position: fixed;                /* Se posa pegado al borde izquierdo sin desacomodar la página */
+    top: 58px;                      /* Justo debajo de la barra superior */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 58px);
+    background-color: #181b22;
+    border-right: 1px solid #2e3340;
+    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.45);
+    z-index: 1000;                  /* Se muestra por encima de cualquier contenido */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Clase para ocultarlo */
+.sidebar-principal.oculto {
+    display: none;
+}
+
+.sidebar-principal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #2e3340;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-cerrar-x {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-cerrar-x:hover {
+    color: #f59e0b;
+}
+
+.lista-sidebar-principal {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.item-sidebar-principal {
+    display: block;
+    padding: 14px 22px;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 1rem;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.item-sidebar-principal:hover {
+    background-color: #252934;
+    color: #f59e0b;
+    border-left: 4px solid #f59e0b;
+}
+
 
 .navegacion_item a {
     color: #94a3b8;
@@ -413,4 +504,720 @@ hr {
     text-align: center;  /* Centra el nombre del lenguaje */
     width: 100%;
 }
+
+
+
+
+
+
+
+
+
+/* Contenedor principal dividido en 2 zonas */
+.layout-w3 {
+    display: flex;
+    min-height: calc(100vh - 120px); /* Ocupa toda la altura disponible */
+    width: 100%;
+}
+
+/* --- BARRA LATERAL IZQUIERDA --- */
+.sidebar-clases {
+    width: 270px;
+    flex-shrink: 0;                 /* Evita que se encoja */
+    background-color: #181b22;      /* Fondo más oscuro tipo panel lateral */
+    border-right: 1px solid #2e3340;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.sidebar-header {
+    padding: 0 20px 15px 20px;
+    border-bottom: 1px solid #2e3340;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #f8fafc;
+}
+
+.lista-menu-clases {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.item-menu-clase {
+    display: block;
+    padding: 12px 22px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.item-menu-clase:hover {
+    background-color: #252934;
+    color: #ffffff;
+}
+
+/* Clase seleccionada actualmente (estilo W3Schools) */
+.item-menu-clase.activo {
+    background-color: #2b303d;
+    color: #f59e0b;                 /* Resaltado dorado */
+    font-weight: 600;
+    border-left: 4px solid #f59e0b;
+}
+
+.sidebar-footer {
+    padding: 15px 20px 0 20px;
+    border-top: 1px solid #2e3340;
+}
+
+.btn-volver {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #282c37;
+    color: #f1f5f9;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-volver:hover {
+    background-color: #383e4e;
+}
+
+/* --- ÁREA CENTRAL DE CONTENIDO --- */
+.contenido-clase {
+    flex-grow: 1;                   /* Toma todo el espacio restante */
+    padding: 40px 50px;
+    display: flex;
+    justify-content: center;        /* Centra la lectura en el área disponible */
+}
+
+.clase-contenedor {
+    width: 100%;
+    max-width: 820px;               /* Ancho cómodo para leer sin cansar la vista */
+}
+
+.etiqueta-lenguaje {
+    display: inline-block;
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.titulo-clase-principal {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0 0 15px 0;
+}
+
+.divisor {
+    border: none;
+    border-top: 1px solid #2e3340;
+    margin-bottom: 25px;
+}
+
+.texto-contenido {
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    white-space: pre-wrap;          /* Respeta los párrafos y saltos de línea */
+    margin-bottom: 25px;
+}
+
+/* --- CAJA DE CÓDIGO ESTILO W3SCHOOLS --- */
+.caja-codigo {
+    background-color: #181b22;
+    border: 1px solid #323846;
+    border-left: 4px solid #f59e0b;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.caja-codigo-header {
+    background-color: #232732;
+    color: #94a3b8;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-bottom: 1px solid #323846;
+}
+
+.caja-codigo pre {
+    margin: 0;
+    padding: 18px;
+    color: #38bdf8;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+/* Estilo del botón para ocultar/mostrar menú */
+.btn-menu-toggle {
+    background-color: #282c37;
+    color: #f8fafc;
+    border: 1px solid #383e4e;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-menu-toggle:hover {
+    background-color: #323746;
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+/* Clase que oculta la barra lateral cuando se presiona el botón */
+.sidebar-clases.oculta {
+    display: none;
+}
+
+
+
+/* Contenedor de botones Anterior / Siguiente */
+.navegacion-clases {
+    display: flex;
+    justify-content: space-between; /* Empuja uno a la izquierda y otro a la derecha */
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #2e3340;
+}
+
+/* Estilo base de los botones */
+.btn-nav-clase {
+    background-color: #282c37;
+    color: #f8fafc;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 1px solid #383e4e;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.btn-nav-clase:hover {
+    background-color: #323746;
+    border-color: #f59e0b;
+    color: #f59e0b;
+    transform: translateY(-2px);
+}
+
+/* Destacar un poco más el botón de "Siguiente clase" */
+.btn-nav-clase.btn-siguiente {
+    background-color: #f59e0b;
+    color: #181b22;
+    border-color: #f59e0b;
+}
+
+.btn-nav-clase.btn-siguiente:hover {
+    background-color: #d97706;
+    color: #ffffff;
+}
+
+
+/* --- ESTILOS DE LA SECCIÓN LEGAJO --- */
+.contenedor-legajo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 25px 60px 25px;
+}
+
+/* Pestañas Python / HTML */
+.tabs-legajo {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background-color: #282c37;
+    color: #cbd5e1;
+    border: 1px solid #383e4e;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+    background-color: #323746;
+    color: #ffffff;
+}
+
+.tab-btn.activo {
+    background-color: #f59e0b;
+    color: #181b22;
+    border-color: #f59e0b;
+}
+
+/* Grid de 3 columnas (Básico, Intermedio, Avanzado) */
+.grid-niveles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.columna-nivel {
+    background-color: #1e222b;
+    border: 1px solid #2e3340;
+    border-radius: 12px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nivel-header {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #2e3340;
+}
+
+.nivel-header h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.nivel-header span {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Subtítulos Gratuitos / De pago */
+.grupo-recursos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.subtitulo-tipo {
+    margin: 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #94a3b8;
+}
+
+/* Tarjeta de cada link externo */
+.card-recurso {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #282c37;
+    border: 1px solid #383e4e;
+    padding: 14px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.card-recurso:hover {
+    background-color: #323746;
+    border-color: #f59e0b;
+    transform: translateY(-2px);
+}
+
+.recurso-info strong {
+    display: block;
+    color: #f8fafc;
+    font-size: 0.98rem;
+    margin-bottom: 4px;
+}
+
+.recurso-info p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Etiquetas Gratis / De pago */
+.badge-gratis {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.badge-pago {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+
+
+/* --- BANNER PROMOCIONAL DEL LEGAJO EN EL INDEX --- */
+.banner-legajo {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.banner-legajo-contenido {
+    background: linear-gradient(145deg, #232732, #181b22);
+    border: 1px solid #383e4e;
+    border-top: 3px solid #f59e0b;
+    border-radius: 16px;
+    padding: 40px 35px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.etiqueta-destacada {
+    display: inline-block;
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-bottom: 15px;
+}
+
+.banner-legajo-titulo {
+    color: #ffffff;
+    font-size: 1.9rem;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+
+.banner-legajo-titulo span {
+    color: #f59e0b;
+}
+
+.banner-legajo-texto {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0 auto 25px auto;
+}
+
+.banner-legajo-texto strong {
+    color: #f8fafc;
+}
+
+/* Píldoras de beneficios */
+.banner-legajo-beneficios {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.beneficio-item {
+    background-color: #282c37;
+    color: #e2e8f0;
+    border: 1px solid #383e4e;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Botón principal de acción */
+.btn-explorar-legajo {
+    display: inline-block;
+    background-color: #f59e0b;
+    color: #181b22;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+}
+
+.btn-explorar-legajo:hover {
+    background-color: #d97706;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+}
+
+
+/* --- TARJETA DE PORTADA: APRENDE UN OFICIO --- */
+.banner-oficios {
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.banner-oficios-contenido {
+    background: linear-gradient(145deg, #232732, #181b22);
+    border: 1px solid #383e4e;
+    border-top: 3px solid #f59e0b;
+    border-radius: 16px;
+    padding: 45px 35px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.banner-oficios-titulo {
+    color: #ffffff;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    line-height: 1.25;
+}
+
+.banner-oficios-titulo span {
+    color: #f59e0b; /* Resalta la palabra "oficio" en dorado */
+}
+
+.banner-oficios-texto {
+    color: #cbd5e1;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    max-width: 620px;
+    margin: 0 auto 30px auto;
+}
+
+/* Lista de profesiones dentro de la tarjeta */
+.lista_profesiones {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 720px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.profesion_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #282c37;
+    color: #f8fafc;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid #383e4e;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    cursor: default;
+}
+
+.profesion_item .punto {
+    width: 8px;
+    height: 8px;
+    background-color: #f59e0b;
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+.profesion_item:hover {
+    background-color: #323746;
+    border-color: #f59e0b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(245, 158, 11, 0.18);
+}
+
+.profesion_item:hover .punto {
+    transform: scale(1.4);
+}
+
+
+/* --- ESTILOS DE HOJA DE RUTAS --- */
+.contenedor-ruta {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px 25px 70px 25px;
+}
+
+/* Línea de tiempo vertical */
+.timeline-ruta {
+    position: relative;
+    margin: 40px 0;
+    padding-left: 45px;
+    border-left: 3px solid #383e4e;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.paso-ruta {
+    position: relative;
+}
+
+/* Círculo numerado sobre la línea vertical */
+.paso-numero {
+    position: absolute;
+    left: -63px;
+    top: 15px;
+    width: 34px;
+    height: 34px;
+    background-color: #f59e0b;
+    color: #181b22;
+    font-weight: 800;
+    font-size: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 6px #181b22;
+}
+
+/* Tarjeta de cada fase */
+.paso-tarjeta {
+    background: linear-gradient(145deg, #232732, #1c2029);
+    border: 1px solid #383e4e;
+    border-radius: 14px;
+    padding: 25px 28px;
+    transition: all 0.25s ease;
+}
+
+.paso-tarjeta:hover {
+    border-color: #f59e0b;
+    transform: translateX(4px);
+}
+
+.badge-fase {
+    display: inline-block;
+    color: #f59e0b;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+}
+
+.paso-header h3 {
+    margin: 0 0 12px 0;
+    color: #ffffff;
+    font-size: 1.35rem;
+}
+
+.paso-descripcion {
+    color: #cbd5e1;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+/* Dos columnas internas (HTML vs Python) */
+.paso-columnas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.mini-bloque {
+    background-color: #282c37;
+    border: 1px solid #383e4e;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.mini-bloque strong {
+    display: block;
+    color: #f8fafc;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.mini-bloque ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.mini-bloque code {
+    background-color: #181b22;
+    color: #38bdf8;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Pie de cada fase (Recursos y Meta) */
+.paso-recursos,
+.paso-meta {
+    background-color: rgba(24, 27, 34, 0.7);
+    border-left: 3px solid #f59e0b;
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Botones finales */
+.acciones-ruta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.btn-secundario-ruta {
+    display: inline-block;
+    background-color: #282c37;
+    color: #f8fafc;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: 1px solid #383e4e;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.btn-secundario-ruta:hover {
+    background-color: #323746;
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+
+
 
